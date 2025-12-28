@@ -9,6 +9,41 @@ The `styles.css` file contains all the styling for the Restaurant Billing System
 
 ---
 
+## Recent Updates (Dec 2025)
+
+### Prevent card stretching on desktop (few items)
+When there are only a few Tables/Menu items, CSS Grid can make cards stretch to fill extra space. The layout was updated to keep cards at a consistent, natural size on desktop.
+
+**Updated selectors:**
+- `.menu-items`, `.tables-grid` (grid packing/alignment)
+- `.menu-item`, `.table-card` (card sizing caps)
+
+**What changed (conceptually):**
+- Keep the grid responsive with `minmax(..., 1fr)` so columns can still auto-fit.
+- Pack items to the start of the grid using:
+    - `justify-content: start;`
+    - `justify-items: start;`
+    - `align-content: start;`
+    - `align-items: start;`
+- Cap card growth so cards don’t become extra wide:
+    - `.menu-item { max-width: 220px; width: 100%; }`
+    - `.table-card { max-width: 240px; width: 100%; }`
+
+### Keep mobile layout “full width” like before
+On small screens, those desktop max-width caps would make cards look narrow. Media query overrides were added so cards stretch to fill their grid column on mobile.
+
+**Mobile overrides added inside:**
+- `@media (max-width: 768px)`
+- `@media (max-width: 480px)`
+
+**Overrides (conceptually):**
+- `.menu-item` and `.table-card` switch to:
+    - `max-width: none;`
+    - `width: 100%;`
+    - `justify-self: stretch;`
+
+---
+
 ## CSS Variables (Custom Properties)
 
 ```css
