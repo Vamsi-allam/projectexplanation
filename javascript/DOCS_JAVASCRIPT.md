@@ -10,6 +10,23 @@ The `app.js` file contains all the logic for the Restaurant Billing System. It h
 
 ---
 
+## Recent Updates (Dec 2025)
+
+### Table search: safer + more consistent
+Table filtering was updated to behave more reliably (similar to menu search).
+
+**What changed:**
+- `applyTableFilters()` now trims the search input before filtering:
+    - Prevents accidental spaces from breaking matches.
+- `setupEventListeners()` now checks `tableSearchInput` exists before adding the `input` listener:
+    - Prevents runtime errors if the table search input is missing/renamed.
+
+**Related functions:**
+- `applyTableFilters()`
+- `setupEventListeners()`
+
+---
+
 ## Data Structures
 
 ### 1. menuData Array
