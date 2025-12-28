@@ -5,6 +5,24 @@ The `index.html` file is the main structure of the Restaurant Billing System. It
 
 ---
 
+## Recent Notes (Dec 2025)
+
+### Required IDs for search + rendering
+The JavaScript expects these elements/IDs to exist so filtering and rendering works correctly:
+
+**Tables**
+- `id="tableSearch"` (table search input)
+- `id="tableStatusFilter"` (available/occupied filter)
+- `id="tablesGrid"` (container where table cards are rendered)
+
+**Menu**
+- `id="menuSearch"` (menu search input)
+- `id="menuItems"` (container where menu cards are rendered)
+
+If any of these IDs are renamed or removed, the corresponding search/filter/rendering will not work as expected.
+
+---
+
 ## Document Structure
 
 ### 1. HEAD Section
